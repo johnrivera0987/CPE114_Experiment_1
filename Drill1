@@ -1,0 +1,108 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-642-g3bdb50da)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_000000000127daf0 .scope module, "testbench1_1" "testbench1_1" 2 13;
+ .timescale 0 0;
+v000000000127e0e0_0 .net "W", 0 3, L_00000000008725c0;  1 drivers
+v000000000127e180_0 .var "X", 0 0;
+v0000000000872250_0 .var "Y", 0 0;
+v00000000008722f0_0 .var "Z", 0 0;
+S_000000000127cbc0 .scope module, "tb1" "exercise1_1" 2 16, 2 1 0, S_000000000127daf0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 4 "W";
+    .port_info 1 /INPUT 1 "X";
+    .port_info 2 /INPUT 1 "Y";
+    .port_info 3 /INPUT 1 "Z";
+L_000000000127e5a0 .functor NOT 1, v000000000127e180_0, C4<0>, C4<0>, C4<0>;
+L_0000000000872390 .functor NOT 1, v0000000000872250_0, C4<0>, C4<0>, C4<0>;
+L_0000000000872400 .functor NOT 1, v00000000008722f0_0, C4<0>, C4<0>, C4<0>;
+L_0000000000872470 .functor NAND 1, L_000000000127e5a0, L_0000000000872390, L_0000000000872400, C4<1>;
+L_00000000008724e0 .functor NAND 1, L_000000000127e5a0, v0000000000872250_0, L_0000000000872400, C4<1>;
+L_0000000000872550 .functor NAND 1, v000000000127e180_0, L_0000000000872390, L_0000000000872400, C4<1>;
+L_0000000000872660 .functor NAND 1, v000000000127e180_0, v0000000000872250_0, L_0000000000872400, C4<1>;
+v000000000127c9e0_0 .net "W", 0 3, L_00000000008725c0;  alias, 1 drivers
+v000000000127bae0_0 .net "X", 0 0, v000000000127e180_0;  1 drivers
+v000000000127dc80_0 .net "X1", 0 0, L_000000000127e5a0;  1 drivers
+v000000000127cd50_0 .net "Y", 0 0, v0000000000872250_0;  1 drivers
+v000000000127cdf0_0 .net "Y1", 0 0, L_0000000000872390;  1 drivers
+v000000000127ce90_0 .net "Z", 0 0, v00000000008722f0_0;  1 drivers
+v000000000127ddc0_0 .net "Z1", 0 0, L_0000000000872400;  1 drivers
+v000000000127de60_0 .net *"_s0", 0 0, L_0000000000872470;  1 drivers
+v000000000127df00_0 .net *"_s2", 0 0, L_00000000008724e0;  1 drivers
+v000000000127dfa0_0 .net *"_s4", 0 0, L_0000000000872550;  1 drivers
+v000000000127e040_0 .net *"_s6", 0 0, L_0000000000872660;  1 drivers
+L_00000000008725c0 .concat8 [ 1 1 1 1], L_0000000000872660, L_0000000000872550, L_00000000008724e0, L_0000000000872470;
+    .scope S_000000000127daf0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000127e180_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000872250_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000008722f0_0, 0, 1;
+    %vpi_call 2 20 "$display", "Simulating output for Drill1_1" {0 0 0};
+    %vpi_call 2 21 "$monitor", $time, " ", " ", "X=%b Y=%b Z=%b W=%b", v000000000127e180_0, v0000000000872250_0, v00000000008722f0_0, v000000000127e0e0_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000127e180_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000872250_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000008722f0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000127e180_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000872250_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000008722f0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000127e180_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000872250_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000008722f0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000127e180_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000872250_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000008722f0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000127e180_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000872250_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000008722f0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000127e180_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000872250_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000008722f0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000127e180_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000872250_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000008722f0_0, 0, 1;
+    %delay 2, 0;
+    %vpi_call 2 30 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Drill1_1.v";
